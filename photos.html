@@ -1,0 +1,242 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+ <script src="https://use.fontawesome.com/1c5df93fb8.js"></script>
+ <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script> 
+ <script src="https://unpkg.com/esri-leaflet@2.5.1/dist/esri-leaflet.js"
+    integrity="sha512-q7X96AASUF0hol5Ih7AeZpRF6smJS55lcvy+GLWzJfZN+31/BQ8cgNx2FGF+IQSA4z2jHwB20vml+drmooqzzQ=="
+    crossorigin=""></script>
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+<style type="text/css">
+tobgroup-title {
+    color: #6497B1;
+    font-weight: bold;
+  }
+.btn-blue-custom,
+  a.btn-blue-custom
+  {
+    border: none;
+    background-color: #0b5c94;
+    color: #fff;
+    font-size: 14px;
+    padding: 3px 10px;
+    border-radius: 3px;
+    text-align: center;
+  }
+  .btn-dark-custom, 
+  a.btn-dark-custom
+  {
+    border: none;
+    background-color: black;
+    color:white;  
+    border-radius: 3px;
+   width: 80px; 
+   height: 50px;
+
+  }
+#mapid{
+    height: 200px;
+    z-index: 0; 
+  }
+.category-box .f-box .btn-send {
+      margin-left: inherit;
+      width: 155px;
+      margin-top: 0.5em;
+      align-self: center;
+    }
+ .category-items a > div {
+    background-color: #fff;
+  }
+.fixed-sidebar {
+        width: 100%;
+        position: fixed; 
+        left: -20px;  
+        padding: 10px 0; 
+    }
+  .category-items small{
+    color: #6e6e6e;
+    font-size: 75%;
+    position: static;
+  }
+  .button2 {
+  background-color: white; 
+  color: #008CBA; 
+  border: 2px solid #008CBA;
+  border-radius: 3px;text-align: center;
+  padding: 5px;
+}
+  .category-box {
+    /* border: 2px solid white; */
+    border: 2px solid #f1f1f1; 
+    border-radius: 5px;  
+  }
+ .category-box .h-box{
+    border-bottom: 1px ; 
+  }
+  .category-box .about-the-business{
+
+  }
+  .category-box .customer-reviews{
+    
+  }
+ .category-box.suggestions {
+    border: 0px;
+  }
+  .category-box .send-us-message{
+    
+  }
+  .photos-videos{
+    margin-bottom: 20px;
+
+  }
+  .sponsored {
+    background-image: url('/img/temp/sponsored.png');
+    background-size: cover;
+    height: 500px;
+    width: 100%;
+  }
+  .reviews {
+    font-size: 14px;
+    color: #e9771f;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .reviews-individual{
+     font-size: 14px;
+    color: #e9771f; 
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    padding: 5px;
+    margin-left: 40px;
+  }
+.btn-add-business {
+    padding: 5px 20px;
+    font-size: 16px;
+  }
+
+  .f-box .btn-send{
+    margin-left: auto;
+  }
+ .business-owner .info {
+align-self: center;
+}
+.business-owner { display: flex;
+} 
+.business-sugestion {
+  display: flex;
+  flex-direction: column;
+}
+.suggestion-info small{
+    justify-content: center;
+    align-self: center;
+    display: block;
+
+} 
+.suggestion-item {
+  display: flex;
+  border-bottom: 2px solid #F1F1F1;
+  padding: 10px;
+}
+.images img{
+ width: 80px;
+ height: 50px;
+ object-fit: contain;
+}
+.stars{
+
+}
+.category-box.login {
+    background: #F0F0F0;
+    border: 2px solid #D8D8D8;
+    display: flex;
+}
+/*drop down*/
+.SearchReview{
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 10px
+}
+.customers-individual-review{
+  display: flex;
+}
+.review-details small{
+    justify-content: center;
+    align-self: center;
+    display: block; 
+}
+#basemaps-wrapper {
+    position: absolute;
+    top: 75px;
+    right: 35px;
+    z-index: 2;
+    background: white;
+    padding: 10px;
+    
+}
+.basemap-op{ 
+}
+.directions{
+   position: absolute;
+    bottom:  60px;
+    right: 35px;
+    z-index: 2;
+    background:white;
+    padding: 10px; 
+} 
+.button2.fa.fa-star {
+    border-radius: 5px;
+    border: 1px solid;
+    padding: 5px;
+    margin: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+button.button2.fa.fa-share-alt { 
+    border-radius: 5px;
+    border: 1px solid;
+    margin-left: 10px;
+    padding-left: 15px;
+    padding-right: 10px;
+} 
+button.button2.btn-blue-custom {
+    border-radius: 5px;
+    border: 1px solid;
+    padding-left: 50px;
+    padding-right: 50px;
+}  
+
+</style>
+<div class="container" style="margin-top: 67px;" class="category-items">
+  <div class="row" style="padding-top: 10px;">
+     <div class="col-3" class="category-box" class="fixed-sidebar">
+        </div> 
+      <div class="col-6" style="">
+          <div class="category-box photos-videos">
+            <div class="h-box"  style="font-weight: bold; padding: 10px;">
+                   Photos and Videos 
+              <div style="padding: 10px;" class="row">
+                
+                <!-- <div class="col-4">
+                    <button class="fa fa-upload btn-dark-custom"> </button> 
+                    <button class="btn-dark-custom"> + </button> 
+                 </div> -->
+                   
+                 <div class="images col-48">
+                    <img src="https://www.iconfinder.com/data/icons/social-17/48/photos2-512.png" />
+                    <img src="https://www.iconfinder.com/data/icons/social-17/48/photos2-512.png" />
+                    <img src="https://www.iconfinder.com/data/icons/social-17/48/photos2-512.png" />
+                    <img src="https://www.iconfinder.com/data/icons/social-17/48/photos2-512.png" />
+                 </div>                            
+             </div> 
+            </div>   
+          </div> 
+         </div> 
+    </div> 
+         </div> 
